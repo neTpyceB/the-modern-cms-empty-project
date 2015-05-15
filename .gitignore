@@ -1,0 +1,11 @@
+.idea
+.git/
+/cache/
+/project/logs/
+/temp/
+/vendor/
+/vendor/**/.git
+composer.lock
+sitemap.gz
+sitemap.xml
+robots.txt
