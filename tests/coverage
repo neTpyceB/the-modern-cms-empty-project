@@ -1,0 +1,110 @@
+
+
+Code Coverage Report:        
+  2015-04-30 18:02:31        
+                             
+ Summary:                    
+  Classes: 25.76% (17/66)    
+  Methods: 30.60% (183/598)  
+  Lines:   28.52% (1239/4345)
+
+CommonController
+  Methods:  75.00% ( 3/ 4)   Lines:  37.04% ( 10/ 27)
+CommonView
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  4/  4)
+FirstController
+  Methods:  50.00% ( 1/ 2)   Lines:  14.29% (  1/  7)
+FirstView
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
+\neTpyceB\TMCms\Admin::CmsLanguages
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
+\neTpyceB\TMCms\Admin::Menu
+  Methods:  54.55% ( 6/11)   Lines:  44.74% ( 17/ 38)
+\neTpyceB\TMCms\Admin::Users
+  Methods:   6.25% ( 1/16)   Lines:   4.88% (  6/123)
+\neTpyceB\TMCms\Admin\Guest::CmsGuest
+  Methods:   0.00% ( 0/ 5)   Lines:   2.82% (  2/ 71)
+\neTpyceB\TMCms\Admin\Structure\Object::LanguageCollection
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  2/  2)
+\neTpyceB\TMCms\App::Backend
+  Methods:   0.00% ( 0/ 7)   Lines:  55.17% (112/203)
+\neTpyceB\TMCms\App::Frontend
+  Methods:  46.15% ( 6/13)   Lines:  58.73% (111/189)
+\neTpyceB\TMCms\Cache::APCCache
+  Methods: 100.00% ( 7/ 7)   Lines: 100.00% ( 11/ 11)
+\neTpyceB\TMCms\Cache::Cacher
+  Methods: 100.00% ( 8/ 8)   Lines: 100.00% ( 19/ 19)
+\neTpyceB\TMCms\Cache::FakeCache
+  Methods: 100.00% ( 7/ 7)   Lines: 100.00% (  8/  8)
+\neTpyceB\TMCms\Cache::FileCache
+  Methods: 100.00% (10/10)   Lines: 100.00% ( 45/ 45)
+\neTpyceB\TMCms\Cache::MemcachedCache
+  Methods: 100.00% (11/11)   Lines: 100.00% ( 29/ 29)
+\neTpyceB\TMCms\Config::Settings
+  Methods:  33.33% ( 3/ 9)   Lines:  11.76% (  4/ 34)
+\neTpyceB\TMCms\DB::Backup
+  Methods:  50.00% ( 2/ 4)   Lines:  87.04% ( 47/ 54)
+\neTpyceB\TMCms\DB::QueryAnalyzer
+  Methods: 100.00% ( 4/ 4)   Lines: 100.00% ( 24/ 24)
+\neTpyceB\TMCms\DB::SQL
+  Methods:  18.60% ( 8/43)   Lines:  15.58% ( 48/308)
+\neTpyceB\TMCms\DB::Transaction
+  Methods:  50.00% (12/24)   Lines:  74.39% ( 61/ 82)
+\neTpyceB\TMCms\DB::TransactionFactory
+  Methods: 100.00% ( 4/ 4)   Lines: 100.00% ( 10/ 10)
+\neTpyceB\TMCms\Files::FileSystem
+  Methods:  25.00% ( 2/ 8)   Lines:  42.00% ( 42/100)
+\neTpyceB\TMCms\Files::Finder
+  Methods:   0.00% ( 0/ 6)   Lines:  44.44% ( 16/ 36)
+\neTpyceB\TMCms\Files::MimeTypes
+  Methods: 100.00% ( 3/ 3)   Lines: 100.00% (  4/  4)
+\neTpyceB\TMCms\HTML\Cms::CmsTable
+  Methods:   0.00% ( 0/37)   Lines:   2.04% ( 12/587)
+\neTpyceB\TMCms\HTML\Cms::Column
+  Methods:   4.26% ( 2/47)   Lines:   2.86% (  6/210)
+\neTpyceB\TMCms\HTML\Cms::TableLinker
+  Methods:  16.67% ( 1/ 6)   Lines:  11.11% (  3/ 27)
+\neTpyceB\TMCms\HTML\Cms::TablePager
+  Methods:  25.00% ( 2/ 8)   Lines:  14.00% (  7/ 50)
+\neTpyceB\TMCms\HTML\Cms\Column::ColumnAccept
+  Methods:  50.00% ( 1/ 2)   Lines:  14.29% (  1/  7)
+\neTpyceB\TMCms\Log::Errors
+  Methods:   0.00% ( 0/12)   Lines:   1.44% (  2/139)
+\neTpyceB\TMCms\Log::Usage
+  Methods:  75.00% ( 3/ 4)   Lines:  37.50% (  6/ 16)
+\neTpyceB\TMCms\Modules::CommonObject
+  Methods:   8.00% ( 2/25)   Lines:  18.92% ( 28/148)
+\neTpyceB\TMCms\Modules::CommonObjectCollection
+  Methods:  18.42% ( 7/38)   Lines:  33.09% ( 46/139)
+\neTpyceB\TMCms\Modules\RSS::ModuleRSS
+  Methods:  30.77% ( 4/13)   Lines:  26.83% ( 11/ 41)
+\neTpyceB\TMCms\Network::AgentDetectors
+  Methods:  62.50% ( 5/ 8)   Lines:  60.40% ( 90/149)
+\neTpyceB\TMCms\Routing::Controller
+  Methods:  75.00% ( 3/ 4)   Lines:  80.00% (  4/  5)
+\neTpyceB\TMCms\Routing::Languages
+  Methods:  12.50% ( 1/ 8)   Lines:  36.36% ( 36/ 99)
+\neTpyceB\TMCms\Routing::MVC
+  Methods:  85.71% (12/14)   Lines:  91.89% ( 34/ 37)
+\neTpyceB\TMCms\Routing::Router
+  Methods:  80.00% ( 4/ 5)   Lines:  48.11% ( 89/185)
+\neTpyceB\TMCms\Routing::Structure
+  Methods:   5.56% ( 1/18)   Lines:  16.03% ( 38/237)
+\neTpyceB\TMCms\Routing::View
+  Methods: 100.00% ( 5/ 5)   Lines: 100.00% ( 13/ 13)
+\neTpyceB\TMCms\Strings::Converter
+  Methods:   0.00% ( 0/16)   Lines:   1.94% (  3/155)
+\neTpyceB\TMCms\Templates::Components
+  Methods:  20.00% ( 1/ 5)   Lines:  26.79% ( 15/ 56)
+\neTpyceB\TMCms\Templates::Page
+  Methods: 100.00% ( 7/ 7)   Lines: 100.00% ( 10/ 10)
+\neTpyceB\TMCms\Templates::PageBody
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  3/  3)
+\neTpyceB\TMCms\Templates::PageHead
+  Methods:  57.14% (12/21)   Lines:  79.76% ( 67/ 84)
+\neTpyceB\TMCms\Templates::PageTail
+  Methods:  50.00% ( 3/ 6)   Lines:  70.00% ( 14/ 20)
+\neTpyceB\TMCms\Templates::Plugin
+  Methods:  11.11% ( 1/ 9)   Lines:  35.71% ( 15/ 42)
+\neTpyceB\TMCms\Templates::VisualEdit
+  Methods:  25.00% ( 1/ 4)   Lines:  33.33% (  3/  9)
