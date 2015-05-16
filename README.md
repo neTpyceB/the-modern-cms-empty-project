@@ -1,7 +1,7 @@
 The Modern CMS
 Framework with abilities.
 Ready user-friendly admin panel.
-Easy to code backend.
+Easy to code backend. Multilingual and flexible.
 
 Download or git-clone this repo, put your libs in  composer.json and composer update
 
