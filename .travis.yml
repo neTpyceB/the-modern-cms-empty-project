@@ -2,3 +2,8 @@ language: php
 
 php:
   - 5.5
+
+script: "./tests/run_tests.sh"
+
+install:
+  - composer update
