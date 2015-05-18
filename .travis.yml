@@ -9,5 +9,5 @@ before_script:
 
 script: "./tests/run_tests.sh"
 
-install:
-  - composer update
+# install:
+#  - composer update
