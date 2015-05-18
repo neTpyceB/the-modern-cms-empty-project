@@ -2,6 +2,9 @@ language: php
 
 php:
   - 5.5
+  
+before_script:
+  - echo -e "Host bitbucket.org\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
 script: "./tests/run_tests.sh"
 
