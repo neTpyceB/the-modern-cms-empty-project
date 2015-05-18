@@ -10,3 +10,5 @@ Run tests - ./tests/run_tests.sh
 All server requests should go to index.php
 
 High coding speed and supportability.
+
+[![Build Status](https://travis-ci.org/neTpyceB/the-modern-cms.svg?branch=master)](https://travis-ci.org/neTpyceB/the-modern-cms)
