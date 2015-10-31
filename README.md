@@ -12,3 +12,6 @@ All server requests should go to index.php
 High coding speed and supportability.
 
 [![Build Status](https://travis-ci.org/neTpyceB/the-modern-cms.svg?branch=master)](https://travis-ci.org/neTpyceB/the-modern-cms)
+
+[Go to Wiki](https://github.com/neTpyceB/the-modern-cms/wiki)
+
