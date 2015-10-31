@@ -1,9 +1,3 @@
-# Use UTF-8 encoding for anything served text/plain or text/html
-AddDefaultCharset utf-8
-
-# Force UTF-8 for agent number of file formats
-AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
-
 # PHP settings
 <IfModule mod_php5.c>
 	php_flag display_errors 1
@@ -17,44 +11,10 @@ AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
 	php_value max_execution_time 60
 </IfModule>
 
-<files config.php>
-	order deny,allow
-	deny from all
-</files>
 <IfModule mod_gzip.c>
 	mod_gzip_on no
 </IfModule>
 #Options +FollowSymLinks
-
-RewriteEngine On
-Options -Indexes
-
-# Force non-www
-RewriteCond %{HTTP_HOST} ^www\.
-RewriteCond %{HTTPS}s ^on(s)|off
-RewriteCond http%1://%{HTTP_HOST} ^(https?://)(www\.)?(.+)$
-RewriteRule ^ %1%3%{REQUEST_URI} [R=301,L]
-
-# Force trailing slash
-RewriteCond %{REQUEST_URI} /+[^\.]+$
-RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
-
-# Hide folders
-RewriteRule ^project/(.*) public/$1
-
-# Deny hidden files
-RedirectMatch 404 /\..*$
-
-# Deny Access to Backup and Source Files
-<FilesMatch "(\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|swp)|~)$">
-    ## Apache 2.2
-    Order allow,deny
-    Deny from all
-    Satisfy All
-
-    ## Apache 2.4
-    # Require all denied
-</FilesMatch>
 
 <IfModule mod_deflate.c>
   # Compress HTML, CSS, JavaScript, Text, XML and fonts
@@ -84,8 +44,127 @@ RedirectMatch 404 /\..*$
   BrowserMatch ^Mozilla/4 gzip-only-text/html
   BrowserMatch ^Mozilla/4\.0[678] no-gzip
   BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
-  Header append Vary User-Agent
+  Header append Vary AdminUser-Agent
 </IfModule>
+
+# Compress text files
+<IfModule mod_deflate.c>
+    # Force compression for mangled headers.
+    # http://developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping
+    <IfModule mod_setenvif.c>
+        <IfModule mod_headers.c>
+            SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+            RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+        </IfModule>
+    </IfModule>
+
+    # Compress all output labeled with one of the following MIME-types
+    # (for Apache versions below 2.3.7, you don't need to enable `mod_filter`
+    #  and can remove the `<IfModule mod_filter.c>` and `</IfModule>` lines
+    #  as `AddOutputFilterByType` is still in the core directives).
+    <IfModule mod_filter.c>
+        AddOutputFilterByType DEFLATE application/atom+xml \
+                                      application/javascript \
+                                      application/json \
+                                      application/rss+xml \
+                                      application/vnd.ms-fontobject \
+                                      application/x-font-ttf \
+                                      application/x-web-app-manifest+json \
+                                      application/xhtml+xml \
+                                      application/xml \
+                                      font/opentype \
+                                      image/svg+xml \
+                                      image/x-icon \
+                                      text/css \
+                                      text/html \
+                                      text/plain \
+                                      text/x-component \
+                                      text/xml
+    </IfModule>
+</IfModule>
+
+# Allow cross-domain fonts - fix for Firefox
+<IfModule mod_headers.c>
+    <FilesMatch "\.(eot|otf|ttc|ttf|woff|woff2)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+</IfModule>
+
+<ifModule mod_gzip.c>
+    mod_gzip_on Yes
+    mod_gzip_dechunk Yes
+    mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+    mod_gzip_item_include handler ^cgi-script$
+    mod_gzip_item_include mime ^text/.*
+    mod_gzip_item_include mime ^application/x-javascript.*
+    mod_gzip_item_exclude mime ^image/.*
+    mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</ifModule>
+
+# Gzipeed files
+<files *.js.gz>
+  AddType "text/javascript" .gz
+  AddEncoding gzip .gz
+</files>
+<files *.css.gz>
+  AddType "text/css" .gz
+  AddEncoding gzip .gz
+</files>
+
+<IfModule mod_headers.c>
+	Header append Vary AdminUser-Agent
+	<FilesMatch .*\.js\.gz$>
+		ForceType text/javascript
+		Header set Content-Encoding: gzip
+		Header set Cache-control: private
+	</FilesMatch>
+	<FilesMatch .*\.css\.gz$>
+		ForceType text/css
+		Header set Content-Encoding: gzip
+		Header set Cache-control: private
+	</FilesMatch>
+
+#	Rules for image processor
+	<FilesMatch "\.png\&">
+		Header set Content-Type: image/png
+	</FilesMatch>
+	<FilesMatch "\.jpe?g\&">
+		Header set Content-Type: image/jpeg
+	</FilesMatch>
+	<FilesMatch "\.gif\&">
+		Header set Content-Type: image/gif
+	</FilesMatch>
+
+	RewriteCond %{REQUEST_URI}	\.(js|css)$
+	RewriteCond %{HTTP:Accept-encoding} gzip
+	RewriteCond %{REQUEST_FILENAME}\.gz -f
+	RewriteRule ^(.*)$ $1.gz [L]
+</IfModule>
+
+# Use UTF-8 encoding for anything served text/plain or text/html
+AddDefaultCharset utf-8
+
+# Force UTF-8 for agent number of file formats
+AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
+
+RewriteEngine On
+Options -Indexes
+
+# Force non-www
+RewriteCond %{HTTP_HOST} ^www\.
+RewriteCond %{HTTPS}s ^on(s)|off
+RewriteCond http%1://%{HTTP_HOST} ^(https?://)(www\.)?(.+)$
+RewriteRule ^ %1%3%{REQUEST_URI} [R=301,L]
+
+# Force trailing slash
+RewriteCond %{REQUEST_URI} /+[^\.]+$
+RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
+
+# Hide folders
+RewriteRule ^project/(.*) public/$1
+
+# Deny hidden files
+RedirectMatch 404 /\..*$
 
 
 # Cache static files in browser
@@ -137,71 +216,6 @@ ExpiresByType application/x-font-ttf                "access plus 1 month"
 ExpiresByType font/opentype                         "access plus 1 month"
 ExpiresByType image/svg+xml                         "access plus 1 month"
 
-# Compress text files
-<IfModule mod_deflate.c>
-
-    # Force compression for mangled headers.
-    # http://developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping
-    <IfModule mod_setenvif.c>
-        <IfModule mod_headers.c>
-            SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
-            RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
-        </IfModule>
-    </IfModule>
-
-    # Compress all output labeled with one of the following MIME-types
-    # (for Apache versions below 2.3.7, you don't need to enable `mod_filter`
-    #  and can remove the `<IfModule mod_filter.c>` and `</IfModule>` lines
-    #  as `AddOutputFilterByType` is still in the core directives).
-    <IfModule mod_filter.c>
-        AddOutputFilterByType DEFLATE application/atom+xml \
-                                      application/javascript \
-                                      application/json \
-                                      application/rss+xml \
-                                      application/vnd.ms-fontobject \
-                                      application/x-font-ttf \
-                                      application/x-web-app-manifest+json \
-                                      application/xhtml+xml \
-                                      application/xml \
-                                      font/opentype \
-                                      image/svg+xml \
-                                      image/x-icon \
-                                      text/css \
-                                      text/html \
-                                      text/plain \
-                                      text/x-component \
-                                      text/xml
-    </IfModule>
-
-</IfModule>
-
-# Allow cross-domain fonts - fix for Firefox
-<IfModule mod_headers.c>
-    <FilesMatch "\.(eot|otf|ttc|ttf|woff|woff2)$">
-        Header set Access-Control-Allow-Origin "*"
-    </FilesMatch>
-</IfModule>
-
-<ifModule mod_gzip.c>
-    mod_gzip_on Yes
-    mod_gzip_dechunk Yes
-    mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
-    mod_gzip_item_include handler ^cgi-script$
-    mod_gzip_item_include mime ^text/.*
-    mod_gzip_item_include mime ^application/x-javascript.*
-    mod_gzip_item_exclude mime ^image/.*
-    mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
-</ifModule>
-
-# Gzipeed files
-<files *.js.gz>
-  AddType "text/javascript" .gz
-  AddEncoding gzip .gz
-</files>
-<files *.css.gz>
-  AddType "text/css" .gz
-  AddEncoding gzip .gz
-</files>
 #Check to see if browser can accept gzip files.
 ReWriteCond %{HTTP:accept-encoding} gzip
 RewriteCond %{HTTP_USER_AGENT} !Safari
@@ -212,53 +226,31 @@ RewriteCond %{REQUEST_FILENAME}.gz -f
 #All conditions met so add .gz to URL filename (invisibly)
 RewriteRule ^(.+) $1.gz [QSA,L]
 
-<IfModule mod_headers.c>
-	Header append Vary User-Agent
-	<FilesMatch .*\.js\.gz$>
-		ForceType text/javascript
-		Header set Content-Encoding: gzip
-		Header set Cache-control: private
-	</FilesMatch>
-	<FilesMatch .*\.css\.gz$>
-		ForceType text/css
-		Header set Content-Encoding: gzip
-		Header set Cache-control: private
-	</FilesMatch>
+# Now we can proceed to files
 
-#	Rules for image processor
-	<FilesMatch "\.png\&">
-		Header set Content-Type: image/png
-	</FilesMatch>
-	<FilesMatch "\.jpe?g\&">
-		Header set Content-Type: image/jpeg
-	</FilesMatch>
-	<FilesMatch "\.gif\&">
-		Header set Content-Type: image/gif
-	</FilesMatch>
-
-	RewriteCond %{REQUEST_URI}	\.(js|css)$
-	RewriteCond %{HTTP:Accept-encoding} gzip
-	RewriteCond %{REQUEST_FILENAME}\.gz -f
-	RewriteRule ^(.*)$ $1.gz [L]
-</IfModule>
-
+# Exact file match
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule . - [L]
 
-RewriteCond %{REQUEST_URI}	/?(.+)\.(jpg|png|jpeg|gif)([agent-z0-9&=_]+)$
+# image processor, cached file
+RewriteCond %{REQUEST_URI}	/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$
 RewriteCond %{DOCUMENT_ROOT}/cache/images/%0 -f
-RewriteRule	\/?(.+)\.(jpg|png|jpeg|gif)([agent-z0-9&=_]+)$	/cache/images/$0 [NC,L]
+RewriteRule	\/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$	/cache/images/$0 [NC,L]
 
-RewriteCond %{REQUEST_URI}	/?(.+)\.(jpg|png|jpeg|gif)([agent-z0-9&=_]+)$
-RewriteRule	^(.*)/?(.+)\.(jpg|png|jpeg|gif)([agent-z0-9&=_]+)$	/-/ajax/image_processor/?$0 [L]
+# image processor, new file
+RewriteCond %{REQUEST_URI}	/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$
+RewriteRule	^(.*)/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$	/en/ajax/image_processor/?$0 [L]
 
+# deny server variables in url
 RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
 RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
 RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
 RewriteRule ^(.*)$ index.php [F,L]
 
+# all requests except cms and public files translate to front end
 RewriteCond	%{REQUEST_URI}	!(^/cms/)
 RewriteCond	%{REQUEST_URI}	!(^/public/)
 RewriteRule	^[^\.]*$	/index.php [L]
 
+# any other files - go to index
 RewriteRule ^(.*)$ index.php

@@ -5,7 +5,7 @@
 			<div class="main">
 				{%common:common:header%}
 				<div class="content">
-					{%registration:registration:index%}
+					{%contacts%}
 				</div>
 			</div>
 		</div>

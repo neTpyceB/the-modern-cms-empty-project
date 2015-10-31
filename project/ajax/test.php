@@ -1,1 +1,1 @@
-This content is visible when requesting /en/ajax/test/
+This content is visible when requesting /-/ajax/test/

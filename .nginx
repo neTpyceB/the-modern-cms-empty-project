@@ -1,0 +1,53 @@
+# Use http://winginx.com/ru/htaccess
+charset utf-8;
+autoindex off;
+
+location / {
+    if ($http_host ~ "^www\."){
+        rewrite ^(.*)$ /%1%3$request_uri redirect;
+    }
+
+    if ($request_uri ~ "/+[^\.]+$"){
+        rewrite ^/(.+[^/])$ /$request_uri/ redirect;
+    }
+
+    if ($http_user_agent !~ "Safari"){
+        rewrite ^/(.+) /$1.gz break;
+    }
+
+    if ($request_uri ~ "/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$"){
+        rewrite \/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$ /cache/images/$0 break;
+    }
+
+    if ($request_uri ~ "/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$"){
+        rewrite ^/(.*)/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$ /en/ajax/image_processor/?$0 break;
+    }
+
+    if ($query_string ~* "(\<|%3C).*script.*(\>|%3E)"){
+        return 403;
+    }
+    if ($query_string ~ "GLOBALS(=|\[|\%[0-9A-Z]{0,2})"){
+        return 403;
+    }
+    if ($query_string ~ "_REQUEST(=|\[|\%[0-9A-Z]{0,2})"){
+        return 403;
+    }
+
+    rewrite ^(.*)$ /index.php;
+}
+
+location /project {
+    rewrite ^/project/(.*) /public/$1;
+}
+
+location ~ 404 {
+    rewrite ^(.*)$ /\..*$ redirect;
+}
+
+location ~ (^/cms/) {
+}
+location ~ (^/public/) {
+}
+location / {
+    rewrite ^/[^\.]*$ /index.php break;
+}

@@ -1,10 +1,13 @@
 <?php
+
 use \neTpyceB\TMCms\Routing\Controller;
 
 defined('INC') or exit;
 
-class FirstController extends Controller {
-    public static function getComponents() {
+class FirstController extends Controller
+{
+    public static function getComponents()
+    {
         return array(
             'title',
             'title2',
@@ -16,7 +19,8 @@ class FirstController extends Controller {
         );
     }
 
-	public function index() {
+    public function index()
+    {
 
-	}
+    }
 }

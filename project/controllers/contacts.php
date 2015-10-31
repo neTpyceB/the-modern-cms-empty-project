@@ -1,10 +1,13 @@
 <?php
+
 use \neTpyceB\TMCms\Routing\Controller;
 
 defined('INC') or exit;
 
-class ContactsController extends Controller {
-    public static function getComponents() {
+class ContactsController extends Controller
+{
+    public static function getComponents()
+    {
         return array(
             'title',
             'text' => array(
@@ -14,7 +17,8 @@ class ContactsController extends Controller {
         );
     }
 
-    public function index() {
+    public function index()
+    {
 
     }
 }
