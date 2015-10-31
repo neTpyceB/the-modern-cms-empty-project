@@ -23,93 +23,18 @@
     },
     {
       "type": "vcs",
+      "url": "git@github.com:neTpyceB/tmcms-core.git"
+    },
+    {
+      "type": "vcs",
       "url": "git@bitbucket.org:neTpyceB/tmcms-admin.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@bitbucket.org:neTpyceB/tmcms-module-example.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@github.com:neTpyceB/tmcms-module-rss.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@bitbucket.org:neTpyceB/tmcms-module-tags.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@bitbucket.org:neTpyceB/tmcms-module-carts.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@github.com:neTpyceB/tmcms-module-images.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@github.com:neTpyceB/tmcms-module-gallery.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@bitbucket.org:neTpyceB/tmcms-module-params.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@bitbucket.org:neTpyceB/tmcms-module-rating.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@bitbucket.org:neTpyceB/tmcms-module-clients.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@bitbucket.org:neTpyceB/tmcms-module-mobilux.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@bitbucket.org:neTpyceB/tmcms-module-articles.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@bitbucket.org:neTpyceB/tmcms-module-comments.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@bitbucket.org:neTpyceB/tmcms-module-sessions.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@bitbucket.org:neTpyceB/tmcms-module-feedback.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@bitbucket.org:neTpyceB/tmcms-module-catalogue.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@bitbucket.org:neTpyceB/tmcms-module-templater.git"
     }
   ],
   "require": {
-    "php": ">=5.4",
+    "php": ">=5.5",
     "videlalvaro/php-amqplib": "2.2.*",
-    "neTpyceB/TMCms": "dev-version_15_05",
-    "neTpyceB/TMCms-admin": "dev-version_15_05",
-    "neTpyceB/TMCms-module-example": "dev-master",
-    "neTpyceB/TMCms-module-rss": "dev-master",
-    "neTpyceB/TMCms-module-tags": "dev-master",
-    "neTpyceB/TMCms-module-carts": "dev-version_15_05",
-    "neTpyceB/TMCms-module-images": "dev-master",
-    "neTpyceB/TMCms-module-gallery": "dev-version_15_05",
-    "neTpyceB/TMCms-module-params": "dev-master",
-    "neTpyceB/TMCms-module-rating": "dev-master",
-    "neTpyceB/TMCms-module-clients": "dev-version_15_05",
-    "neTpyceB/TMCms-module-mobilux": "dev-master",
-    "neTpyceB/TMCms-module-articles": "dev-version_15_05",
-    "neTpyceB/TMCms-module-comments": "dev-master",
-    "neTpyceB/TMCms-module-sessions": "dev-master",
-    "neTpyceB/TMCms-module-feedback": "dev-master",
-    "neTpyceB/TMCms-module-catalogue": "dev-version_15_05",
-    "neTpyceB/TMCms-module-templater": "dev-master"
+    "neTpyceB/TMCms": "dev-master",
+    "neTpyceB/TMCms-core": "dev-master",
+    "neTpyceB/TMCms-admin": "dev-master"
   }
 }
