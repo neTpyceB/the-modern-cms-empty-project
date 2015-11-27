@@ -1,3 +1,1 @@
-clients
-catalogue
-orders:Заказы
+example:Preview module

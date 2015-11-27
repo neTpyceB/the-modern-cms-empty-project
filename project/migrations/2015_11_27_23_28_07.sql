@@ -1,0 +1,1 @@
+TODO initial installation - create groups and default users, example pages and some entries in example module

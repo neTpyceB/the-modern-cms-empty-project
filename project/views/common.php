@@ -30,7 +30,7 @@ class CommonView extends View
                 </ul>
                 <div class="clear"></div>
             </div>
-            <a class="logo" href="/"><img src="<?= DIR_PUBLIC_URL ?>logo.png"></a>
+            <a class="logo" href="/">Logo here</a>
             <ul>
                 <?php foreach (Structure::getMainMenu() as $v): ?>
                     <li>

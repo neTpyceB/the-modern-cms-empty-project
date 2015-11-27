@@ -3,21 +3,20 @@
 // These are production server settings, shared between all developers
 $config_prod = [
     'db' => [
-        'login' => 'login',
-        'password' => 'password',
-        'name' => 'db_name'
+        'login' => 'github_empty',
+        'password' => 'github_empty_project_password',
+        'name' => 'github_empty_project_db'
     ],
     'site' => [
         'email' => 'your@email.com',
         'name' => 'Website Name'
     ],
     'cms' => [
-        'unique_key' => 'your_unique_key'
+        'unique_key' => 'your_unique_key' // Required for updates
     ]
 ];
 
-// Change all your local settings in local.php
-// File should return array with fields that need to be overwritten
+// Change all your local settings in local.php - file should return array with fields to be overwritten
 $config_local = [];
 if (file_exists(__DIR__ . '/local.php')) {
     $config_local = include_once __DIR__ . '/local.php';

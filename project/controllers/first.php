@@ -1,6 +1,6 @@
 <?php
 
-use \neTpyceB\TMCms\Routing\Controller;
+use neTpyceB\TMCms\Routing\Controller;
 
 defined('INC') or exit;
 

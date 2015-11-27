@@ -10,5 +10,5 @@
 			</div>
 		</div>
 	</div>
-	<div id="footer">© <a href="http://devp.lv/">devp.lv</a></div>
+	<div id="footer">© <a href="http://devp.eu/">devp.eu</a></div>
 </body>
