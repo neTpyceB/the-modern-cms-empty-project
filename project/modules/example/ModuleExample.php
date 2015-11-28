@@ -5,7 +5,7 @@ namespace neTpyceB\TMCms\Modules\Example;
 use neTpyceB\TMCms\Modules\IModule;
 use neTpyceB\TMCms\Traits\singletonInstanceTrait;
 
-class ModuleNotifications implements IModule {
+class ModuleExample implements IModule {
     use singletonInstanceTrait;
 
     public static $tables = [
