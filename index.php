@@ -1,10 +1,10 @@
 <?php
 
-use neTpyceB\TMCms\Admin\FrontPanel;
-use neTpyceB\TMCms\Admin\Users;
-use neTpyceB\TMCms\App\Frontend;
-use neTpyceB\TMCms\Config\Settings;
-use neTpyceB\TMCms\Log\Stats;
+use TMCms\Admin\FrontPanel;
+use TMCms\Admin\Users;
+use TMCms\App\Frontend;
+use TMCms\Config\Settings;
+use TMCms\Log\Stats;
 
 $start_microtime = microtime(1);
 error_reporting(-1);

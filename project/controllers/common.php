@@ -1,8 +1,8 @@
 <?php
 
-use neTpyceB\TMCms\Routing\Controller;
-use neTpyceB\TMCms\Templates\PageHead;
-use neTpyceB\TMCms\Templates\PageTail;
+use TMCms\Routing\Controller;
+use TMCms\Templates\PageHead;
+use TMCms\Templates\PageTail;
 
 defined('INC') or exit;
 

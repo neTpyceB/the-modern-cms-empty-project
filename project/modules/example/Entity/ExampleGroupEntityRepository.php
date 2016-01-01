@@ -1,8 +1,8 @@
 <?php
 
-namespace neTpyceB\TMCms\Modules\Example;
+namespace TMCms\Modules\Example;
 
-use neTpyceB\TMCms\Orm\EntityRepository;
+use TMCms\Orm\EntityRepository;
 
 class ExampleGroupEntityRepository extends EntityRepository {
     protected $db_table = 'm_example';

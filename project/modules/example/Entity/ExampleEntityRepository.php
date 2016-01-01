@@ -1,12 +1,12 @@
 <?php
 
-namespace neTpyceB\TMCms\Modules\Example;
+namespace TMCms\Modules\Example;
 
-use neTpyceB\TMCms\Orm\EntityRepository;
+use TMCms\Orm\EntityRepository;
 
 /**
  * Class ExampleEntityRepository
- * @package neTpyceB\TMCms\Modules\Example
+ * @package TMCms\Modules\Example
  *
  * @method setWhereGroupId(int $group_id)
  */

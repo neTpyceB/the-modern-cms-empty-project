@@ -1,8 +1,8 @@
 <?php
 
-use neTpyceB\TMCms\App\Backend;
-use neTpyceB\TMCms\Config\Settings;
-use neTpyceB\TMCms\Log\Stats;
+use TMCms\App\Backend;
+use TMCms\Config\Settings;
+use TMCms\Log\Stats;
 
 $start_microtime = microtime(1);
 error_reporting(-1);

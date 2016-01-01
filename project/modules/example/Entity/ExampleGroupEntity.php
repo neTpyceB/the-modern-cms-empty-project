@@ -1,8 +1,8 @@
 <?php
 
-namespace neTpyceB\TMCms\Modules\Example;
+namespace TMCms\Modules\Example;
 
-use neTpyceB\TMCms\Orm\Entity;
+use TMCms\Orm\Entity;
 
 /**
  * Class ExampleGroupEntity

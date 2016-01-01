@@ -1,8 +1,8 @@
 <?php
 
-use neTpyceB\TMCms\Routing\Languages;
-use neTpyceB\TMCms\Routing\Structure;
-use neTpyceB\TMCms\Routing\View;
+use TMCms\Routing\Languages;
+use TMCms\Routing\Structure;
+use TMCms\Routing\View;
 
 defined('INC') or exit;
 

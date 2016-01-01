@@ -1,9 +1,9 @@
 <?php
 
-namespace neTpyceB\TMCms\Modules\Example;
+namespace TMCms\Modules\Example;
 
-use neTpyceB\TMCms\Modules\IModule;
-use neTpyceB\TMCms\Traits\singletonInstanceTrait;
+use TMCms\Modules\IModule;
+use TMCms\Traits\singletonInstanceTrait;
 
 class ModuleExample implements IModule {
     use singletonInstanceTrait;

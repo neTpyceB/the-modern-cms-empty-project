@@ -1,7 +1,7 @@
 <?php
 
-use neTpyceB\TMCms\Config\Configuration;
-use neTpyceB\TMCms\Config\Settings;
+use TMCms\Config\Configuration;
+use TMCms\Config\Settings;
 
 defined('INC') or exit;
 
@@ -17,7 +17,7 @@ if (file_exists($autoloader_file)) {
 }
 
 // Error handler
-set_error_handler(array('\neTpyceB\TMCms\Log\Errors', 'Handler'));
+set_error_handler(array('\TMCms\Log\Errors', 'Handler'));
 
 Configuration::getInstance()->addConfigurationEnv(); // Set default
 

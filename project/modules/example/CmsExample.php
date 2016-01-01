@@ -1,12 +1,12 @@
 <?php
 
-namespace neTpyceB\TMCms\Modules\Example;
+namespace TMCms\Modules\Example;
 
-use neTpyceB\TMCms\Admin\Menu;
-use neTpyceB\TMCms\HTML\BreadCrumbs;
-use neTpyceB\TMCms\HTML\Cms\CmsFormHelper;
-use neTpyceB\TMCms\HTML\Cms\CmsTable;
-use neTpyceB\TMCms\Modules\ModuleManager;
+use TMCms\Admin\Menu;
+use TMCms\HTML\BreadCrumbs;
+use TMCms\HTML\Cms\CmsFormHelper;
+use TMCms\HTML\Cms\CmsTable;
+use TMCms\Modules\ModuleManager;
 
 ModuleManager::requireModule('groups');
 
