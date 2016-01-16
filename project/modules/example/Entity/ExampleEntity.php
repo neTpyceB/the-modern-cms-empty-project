@@ -10,4 +10,5 @@ use TMCms\Orm\Entity;
  */
 class ExampleEntity extends Entity {
     protected $db_table = 'm_example';
+    protected $translation_fields = ['title'];
 }

@@ -1,13 +1,13 @@
 {
   "license": "proprietary",
-  "description": "The Modern CMS",
+  "description": "Empty project with prepared simple layout, based on the The Modern CMS",
   "keywords": ["cms"],
-  "homepage": "http://devp.lv/",
+  "homepage": "http://devp.eu/",
   "authors": [
     {
       "name": "Vadims Petrusevs",
-      "email": "info@petrik.lv",
-      "homepage": "http://petrik.lv",
+      "email": "info@devp.lv",
+      "homepage": "http://devp.eu",
       "role": "Developer"
     }
   ],
@@ -35,7 +35,7 @@
     }
   ],
   "require": {
-    "php": ">=5.6",
+    "php": ">=5.5",
     "neTpyceB/TMCms": "dev-master",
     "neTpyceB/TMCms-core": "dev-master",
     "neTpyceB/TMCms-panel": "dev-master",
