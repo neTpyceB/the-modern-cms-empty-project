@@ -21,7 +21,7 @@ set_error_handler(array('\TMCms\Log\Errors', 'Handler'));
 
 $config = Configuration::getInstance();
 
-Configuration::getInstance()->addConfigurationEnv(); // Set default
+$config->addConfigurationEnv(); // Set default
 
 // Check auth
 $auth = Configuration::getInstance()->get('http_auth');
