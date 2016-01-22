@@ -13,6 +13,10 @@ $config_prod = [
     ],
     'cms' => [
         'unique_key' => 'your_unique_key' // Required for updates
+    ],
+    'http_auth' => [
+        'login' => '', // Set if required
+        'password' => '',
     ]
 ];
 

@@ -19,7 +19,22 @@ if (file_exists($autoloader_file)) {
 // Error handler
 set_error_handler(array('\TMCms\Log\Errors', 'Handler'));
 
+$config = Configuration::getInstance();
+
 Configuration::getInstance()->addConfigurationEnv(); // Set default
+
+// Check auth
+$auth = Configuration::getInstance()->get('http_auth');
+$login = isset($auth['login']) ? $auth['login'] : '';
+$password = isset($auth['password']) ? $auth['password'] : '';
+if ($login && $password) {
+    if (!isset($_SERVER['PHP_AUTH_USER']) || (!isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW'])) || ($_SERVER['PHP_AUTH_USER'] != $login || $_SERVER['PHP_AUTH_PW'] != $password)) {
+        header('WWW-Authenticate: Basic realm="Authentication System"');
+        header('HTTP/1.0 401 Unauthorized');
+        echo "No access";
+        exit;
+    }
+}
 
 // Init Settings
 Settings::getInstance()->init();
