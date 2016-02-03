@@ -4,7 +4,6 @@ namespace Tests\TMCms\Admin;
 
 use TMCms\Admin\Menu;
 
-
 class MenuTest extends \PHPUnit_Framework_TestCase {
     public function testDisableMenu() {
         $menu = Menu::getInstance();
