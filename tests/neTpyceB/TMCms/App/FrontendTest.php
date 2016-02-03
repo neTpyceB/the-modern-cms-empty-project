@@ -7,9 +7,8 @@ use TMCms\Admin\Entity\LanguageEntityRepository;
 use TMCms\App\Frontend;
 
 class FrontendTest extends \PHPUnit_Framework_TestCase {
-    public function setUp()
+    public function testGetInstance()
     {
-        parent::setUp();
 
         $lng = new LanguageEntity();
         $lng->loadDataFromArray([
@@ -17,26 +16,31 @@ class FrontendTest extends \PHPUnit_Framework_TestCase {
             'long' => 'Language'
         ]);
         $lng->save();
-    }
 
-    public function testGetInstance()
-    {
         $instance = Frontend::getInstance();
         $this->assertInstanceOf('TMCms\App\Frontend', $instance);
+
+
+        $lng = LanguageEntityRepository::findOneEntityByCriteria(['short' => 'XX']);
+        $lng->deleteObject();
     }
 
     public function test__toString()
     {
+
+        $lng = new LanguageEntity();
+        $lng->loadDataFromArray([
+            'short' => 'XX',
+            'long' => 'Language'
+        ]);
+        $lng->save();
+
         $instance = Frontend::getInstance();
         ob_start();
         echo $instance;
         $html = ob_get_clean();
         $this->assertTrue(is_string($html));
-    }
 
-    public function tearDown()
-    {
-        parent::tearDown();
 
         $lng = LanguageEntityRepository::findOneEntityByCriteria(['short' => 'XX']);
         $lng->deleteObject();
