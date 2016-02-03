@@ -1,0 +1,17 @@
+build_settings:
+    mysql:
+        host: "localhost"
+        user: "github_empty"
+        pass: "github_empty_project_password"
+
+setup:
+    composer:
+        action: "update"
+
+test:
+    php_unit:
+        config:
+            - "tests/phpunit.xml"
+        directory:
+            - "tests/"
+        args: "--bootstrap 'tests/phpunit_bootstrap.php' --configuration 'tests/phpunit.xml'"
