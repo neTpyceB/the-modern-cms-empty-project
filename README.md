@@ -36,7 +36,7 @@ Run first migration in module Tools -> Development (at the bottom of page) - "ru
 
 Run tests - ./tests/run_tests.sh
 
-[![Build Status](https://travis-ci.org/neTpyceB/the-modern-cms.svg?branch=master)](https://travis-ci.org/neTpyceB/the-modern-cms)
-
 [Go to Wiki](https://github.com/neTpyceB/the-modern-cms/wiki)
+
+Build status (tests include all TMCms libraries) ![Build Status](http://ci.devp.eu/build-status/image/3)
 
