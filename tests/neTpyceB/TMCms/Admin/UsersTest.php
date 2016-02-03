@@ -7,6 +7,10 @@ use TMCms\Admin\Users\Entity\AdminUserGroup;
 use TMCms\Admin\Users\Entity\AdminUser;
 use TMCms\Routing\Languages;
 
+// Ensure DB exists
+$users = new Users\Entity\AdminUserRepository();
+$groups = new Users\Entity\AdminUserGroupRepository();
+
 class UsersTest extends \PHPUnit_Framework_TestCase {
     public function testGenerateHash() {
         $pass = '';
