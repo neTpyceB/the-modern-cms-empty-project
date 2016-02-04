@@ -2,6 +2,8 @@
 
 namespace Tests\TMCms\Files;
 
+return;
+
 use TMCms\Files\MimeTypes;
 
 class MimeTypesTest extends \PHPUnit_Framework_TestCase

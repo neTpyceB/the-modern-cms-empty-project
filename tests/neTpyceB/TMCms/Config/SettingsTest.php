@@ -2,6 +2,8 @@
 
 namespace Tests\TMCms\App;
 
+return;
+
 use TMCms\Config\Settings;
 
 class SettingsTest extends \PHPUnit_Framework_TestCase {

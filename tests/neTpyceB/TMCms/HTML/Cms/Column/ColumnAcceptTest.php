@@ -2,6 +2,8 @@
 
 namespace Tests\TMCms\HTML\Cms\Column;
 
+return;
+
 use TMCms\HTML\Cms\CmsTable;
 use TMCms\HTML\Cms\Column\ColumnAccept;
 

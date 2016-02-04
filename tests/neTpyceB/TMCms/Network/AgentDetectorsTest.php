@@ -2,6 +2,8 @@
 
 namespace Tests\TMCms\Network;
 
+return;
+
 use TMCms\Network\AgentDetectors;
 
 class AgentDetectorsTest extends \PHPUnit_Framework_TestCase

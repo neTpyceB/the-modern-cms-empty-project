@@ -2,6 +2,8 @@
 
 namespace Tests\TMCms\DB;
 
+return;
+
 use Exception;
 use TMCms\DB\Transaction;
 use TMCms\DB\TransactionFactory;

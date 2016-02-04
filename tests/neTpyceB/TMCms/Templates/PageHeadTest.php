@@ -2,6 +2,8 @@
 
 namespace Tests\TMCms\Templates;
 
+return;
+
 use TMCms\App\Frontend;
 use TMCms\Files\MimeTypes;
 use TMCms\Templates\PageHead;
