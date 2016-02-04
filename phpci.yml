@@ -15,3 +15,43 @@ test:
         directory:
             - "tests/"
         args: "--bootstrap 'tests/phpunit_bootstrap.php' --configuration 'tests/phpunit.xml'"
+
+#    php_code_sniffer:
+#        path: "project"
+#        ignore:
+#            - "vendor"
+#            - "tests"
+#        suffixes:
+#            - "php"
+    php_cpd:
+        path: "project"
+        ignore:
+            - "vendor"
+            - "tests"
+#    php_cs_fixer:
+#        verbose: true
+#        diff: true
+#        level: "psr2"
+#        workingdir: "project"
+#    php_mess_detector:
+#        path: "project"
+#        ignore:
+#            - "vendor"
+#            - "tests"
+#        rules:
+#            - "cleancode"
+#            - "controversial"
+#            - "codesize"
+#            - "design"
+#            - "naming"
+#            - "unusedcode"
+#    php_loc:
+#        directory: "project"
+#    php_parallel_lint:
+#        directory: "project"
+#        ignore:
+#            - "vendor"
+#            - "tests"
+#    codeception:
+#        config: "."
+#        path: "tests"
