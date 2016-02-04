@@ -15,7 +15,9 @@ class MessagesTest extends \PHPUnit_Framework_TestCase {
         // Remove test message
         $message->deleteObject();
 
-        $this->assertInstanceOf('TMCms\Admin\Users\Entity\UserMessage', $message);
+        $test_msg = new UsersMessage();
+
+        $this->assertInstanceOf(get_class($test_msg), $message);
     }
 
     public function testReceiveMessages() {
