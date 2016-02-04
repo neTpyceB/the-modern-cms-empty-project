@@ -2,9 +2,21 @@
 
 namespace Tests\TMCms\Templates;
 
+use TMCms\Admin\Entity\LanguageEntity;
 use TMCms\App\Frontend;
 use TMCms\Files\MimeTypes;
+use TMCms\Routing\Languages;
 use TMCms\Templates\PageHead;
+
+// Create test language - w/o it frontend dies
+if (!Languages::exists('xx')) {
+    $language = new LanguageEntity();
+    $language->loadDataFromArray([
+        'short' => 'xx',
+        'long' => 'Test language'
+    ]);
+    $language->save();
+}
 
 class PageHeadTest extends \PHPUnit_Framework_TestCase
 {
