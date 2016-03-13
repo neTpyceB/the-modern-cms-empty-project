@@ -19,7 +19,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "git@bitbucket.org:neTpyceB/tmcms.git"
+      "url": "git@bitbucket.org:sia-devp/tmcms.git"
     },
     {
       "type": "vcs",
@@ -31,7 +31,7 @@
     },
     {
       "type": "vcs",
-      "url": "git@bitbucket.org:neTpyceB/tmcms-admin.git"
+      "url": "git@bitbucket.org:sia-devp/tmcms-admin.git"
     }
   ],
   "require": {
