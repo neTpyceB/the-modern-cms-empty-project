@@ -11,6 +11,8 @@
 	php_value max_execution_time 60
 </IfModule>
 
+Require all granted
+
 <IfModule mod_gzip.c>
 	mod_gzip_on no
 </IfModule>
