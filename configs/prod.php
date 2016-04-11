@@ -12,7 +12,9 @@ $config_prod = [
         'name' => 'Website Name'
     ],
     'cms' => [
-        'unique_key' => 'your_unique_key' // Required for updates
+        'unique_key' => 'your_unique_key', // Required for updates
+        'logo' => '/vendor/neTpyceB/TMCms/src/assets/images/logo.png', // Logo in admin panel
+        'logo_link' => 'http://devp.eu/', // Link on logo in admin panel
     ],
     'http_auth' => [
         'login' => '', // Set if required
