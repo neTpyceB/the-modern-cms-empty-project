@@ -25,18 +25,22 @@ For example, apache config file
 </VirtualHost>
 
 Download or git-clone this repo.
+
 Run "composer update" in root folder of the project.
+
 Write your db connection data in file /configs/prod.php
+
 Go to local site in browser.
+
 Database structure will be installed automatically on first visit, wait a few seconds.
+
 After DB in installed - go to http://local.site/cms to enter admin panel. Use "manager" as login and empty password. User will be created by default during installation.
+
 You can change password or create new user in admin panel in module Users.
+
 Run first migration in module Tools -> Development (at the bottom of page) - "run migrations". This will install example data for example module, some example pages, etc.
 
 
 Run tests - ./tests/run_tests.sh
 
 [Go to Wiki](https://github.com/neTpyceB/the-modern-cms/wiki)
-
-Build status (tests include all TMCms libraries) ![Build Status](http://ci.devp.eu/build-status/image/3)
-
