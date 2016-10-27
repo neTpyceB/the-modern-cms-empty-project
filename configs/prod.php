@@ -13,7 +13,7 @@ $config_prod = [
     ],
     'cms' => [
         'unique_key' => 'your_unique_key', // Required for updates
-        'logo' => '/vendor/neTpyceB/TMCms/src/assets/images/logo.png', // Logo in admin panel
+        'logo' => '/vendor/neTpyceB/TMCms-core/src/assets/images/logo.png', // Logo in admin panel
         'logo_link' => 'http://devp.eu/?ref=devp_logo&project='. CFG_SITE_NAME, // Link on logo in admin panel
     ],
     'http_auth' => [
