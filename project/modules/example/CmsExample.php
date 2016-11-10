@@ -2,18 +2,13 @@
 
 namespace TMCms\Modules\Example;
 
-use TMCms\Admin\Menu;
+use TMCms\Admin\Messages;
 use TMCms\HTML\BreadCrumbs;
 use TMCms\HTML\Cms\CmsFormHelper;
 use TMCms\HTML\Cms\CmsTable;
-use TMCms\Modules\ModuleManager;
-
-ModuleManager::requireModule('groups');
-
-Menu::getInstance()
-    ->addSubMenuItem('form')
-;
-
+use TMCms\HTML\Cms\Column\ColumnData;
+use TMCms\HTML\Cms\Column\ColumnDelete;
+use TMCms\HTML\Cms\Columns;
 
 class CmsExample
 {
@@ -25,12 +20,20 @@ class CmsExample
         
         $items = new ExampleEntityRepository();
 
+        echo Columns::getInstance()
+            ->add('<a class="btn btn-success" href="?p=' . P . '&do=add">Add</a><br><br>', ['align' => 'right'])
+        ;
+
         echo CmsTable::getInstance()
             ->addData($items)
+            ->addColumn(ColumnData::getInstance('title')
+                ->enableTranslationColumn()
+            )
+            ->addColumn(ColumnDelete::getInstance())
         ;
     }
 
-    public function form()
+    public function add()
     {
         $data = new ExampleEntity();
 
@@ -41,7 +44,7 @@ class CmsExample
             'unset' => [
                 'group_id' // Field that should not be shown if "combine" auto-generated fields
             ],
-            'action' => '&do=_form', // Url to submit post data
+            'action' => '&do=_add', // Url to submit post data, may be omitted for auto "_function" prefix
             'button' => 'Add Item', // Text on submit button
             'cancel' => true, // Show Cancel button
             'field_key_prefix' => 'my_prefix', // Prefix for every field, may be required for custom scripts or inset forms
@@ -51,7 +54,7 @@ class CmsExample
                 'text' => [ // Field that required extra params
                     'rows' => 10, // Height of textarea
                     'type' => 'textarea', // Not required if have "rows",
-                    'multilng' => true, // Create field for every available languages (Field must be in $translation_field in appropriate Entity)
+                    'translation' => true, // Create field for every available languages (Field must be in $translation_field in appropriate Entity)
                     'html' => true, // Sanitize value,
                     'backup' => true, // Show recover panel
                     'help' => 'Some visible text on hover', // Show ? sign with tooltip
@@ -70,7 +73,8 @@ class CmsExample
                     'options' => [1 => 'Group 1', 2 => 'Group 2'], // Supply with option pairs
                     'type' => 'select', // Not required if have "options"
                     'selected' => 2, // Selected option key,
-                    'multiple' => true, // Convert to multiselect
+                    'multiple' => true, // Convert to multiselect,
+                    'translation' => true, // For all languages
                 ],
                 'linked_to_items' => [
                     'options' => [1 => 'First', 2 => 'Second'],
@@ -144,5 +148,38 @@ class CmsExample
                 ],
             ]
         ]);
+    }
+
+    public function _add() {
+        // Create empty object
+        $example_object = new ExampleEntity();
+        // Set all supplied data
+        $example_object->loadDataFromArray($_POST);
+
+        // Write one propery
+        $example_object->setClientName('Mr. John');
+
+        // Get property value, will get NULL if not found
+        $age = $example_object->getAge();
+
+        // Persist all data in database
+        $example_object->save();
+
+        go('?p='. P); // Go to main page
+    }
+
+    public function _delete() {
+        $example_object = new ExampleEntity($_GET['id']);
+
+        // Delete data from database
+        $example_object->deleteObject();
+
+        // Object may be used further within scope
+
+        $age = $example_object->getAge();
+
+        Messages::sendGreenAlert('Example object with id ' . $example_object->getId() . ' and title ' . $example_object->getTitle() . ' deleted');
+
+        back(); // Redirect to previous page
     }
 }

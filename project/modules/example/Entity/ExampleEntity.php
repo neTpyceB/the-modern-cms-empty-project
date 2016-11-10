@@ -9,6 +9,5 @@ use TMCms\Orm\Entity;
  * @package TMCms\Modules\Example
  */
 class ExampleEntity extends Entity {
-    protected $db_table = 'm_example';
     protected $translation_fields = ['title'];
 }

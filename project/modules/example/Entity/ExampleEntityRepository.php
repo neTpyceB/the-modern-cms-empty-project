@@ -11,7 +11,6 @@ use TMCms\Orm\EntityRepository;
  * @method setWhereGroupId(int $group_id)
  */
 class ExampleEntityRepository extends EntityRepository {
-    protected $db_table = 'm_example';
     protected $translation_fields = ['title'];
 
     protected $table_structure = [
