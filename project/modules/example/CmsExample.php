@@ -133,6 +133,15 @@ class CmsExample
                 'invoice' => [
                     'type' => 'file', // Upload file
                 ],
+                'address_coords' => [
+                    'edit' => 'map', // Google map
+                ],
+                'svg_image' => [
+                    'edit' => 'svg_map', // Svg sector selector
+                ],
+                'svg_image_path' => [
+                    'type' => 'hidden', // Field with image ath for svg sector selector
+                ],
             ]
         ]);
     }
