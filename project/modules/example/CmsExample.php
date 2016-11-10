@@ -91,7 +91,7 @@ class CmsExample
                 ],
                 'notes' => [
                     'type' => 'textarea',
-                    'edit' => 'wysiwyg_widget', // Wrap with simple inline editor
+                    'edit' => 'wysiwyg',
                 ],
                 'allowed_to' => [
                     'type' => 'checkbox_list',
