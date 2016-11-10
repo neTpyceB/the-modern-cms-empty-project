@@ -35,7 +35,7 @@ class CmsExample
         $data = new ExampleEntity();
 
         // No params are required in the form, you may remove any
-        echo CmsFormHelper::outputForm(ModuleExample::$tables['items'], [
+        echo CmsFormHelper::outputForm($data->getDbTableName(), [
             'data' => $data, // Can be simple key-value array or Entity
             'combine' => true, // Auto-generate all fields from DB table
             'unset' => [
