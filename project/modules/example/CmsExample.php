@@ -75,6 +75,11 @@ class CmsExample
                     'selected' => 2, // Selected option key,
                     'multiple' => true, // Convert to multiselect,
                     'translation' => true, // For all languages
+                    'html' => true, // Allow html signs
+                ],
+                'no_style_select' => [ // Input "name" attribute
+                    'options' => [1 => 'One', 2 => 'Two'],
+                    'disable_custom_plugin' => true, // Disable plugin
                 ],
                 'linked_to_items' => [
                     'options' => [1 => 'First', 2 => 'Second'],
