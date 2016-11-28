@@ -1,6 +1,6 @@
 <?php
 
-namespace TMCms\Modules\Example;
+namespace TMCms\Modules\Example\Entity;
 
 use TMCms\Orm\EntityRepository;
 
