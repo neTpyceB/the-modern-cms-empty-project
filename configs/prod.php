@@ -3,9 +3,9 @@
 // These are production server settings, shared between all developers
 $config_prod = [
     'db' => [
-        'login' => 'github_empty',
-        'password' => 'github_empty_project_password',
-        'name' => 'github_empty_project_db'
+        'login' => 'root',
+        'password' => 'root',
+        'name' => 'example'
     ],
     'site' => [
         'email' => 'your@email.com',
