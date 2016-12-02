@@ -9,6 +9,8 @@ use TMCms\HTML\Cms\CmsTable;
 use TMCms\HTML\Cms\Column\ColumnData;
 use TMCms\HTML\Cms\Column\ColumnDelete;
 use TMCms\HTML\Cms\Columns;
+use TMCms\Modules\Example\Entity\ExampleEntity;
+use TMCms\Modules\Example\Entity\ExampleEntityRepository;
 
 class CmsExample
 {

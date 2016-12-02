@@ -2,6 +2,9 @@
 
 namespace TMCms\Modules\Example;
 
+use TMCms\Modules\Example\Entity\ExampleEntityRepository;
+use TMCms\Modules\Example\Entity\ExampleGroupEntity;
+use TMCms\Modules\Example\Entity\ExampleGroupEntityRepository;
 use TMCms\Modules\IModule;
 use TMCms\Traits\singletonInstanceTrait;
 
