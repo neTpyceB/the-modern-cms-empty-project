@@ -43,4 +43,4 @@ Run first migration in module Tools -> Development (at the bottom of page) - "ru
 
 Run tests - ./tests/run_tests.sh
 
-[Go to Wiki](https://github.com/neTpyceB/the-modern-cms/wiki)
+[Go to Wiki](http://tmcms.eu/)
