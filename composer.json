@@ -23,14 +23,6 @@
     },
     {
       "type": "vcs",
-      "url": "git@github.com:devp-eu/tmcms-core.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@github.com:devp-eu/tmcms-panel.git"
-    },
-    {
-      "type": "vcs",
       "url": "git@github.com:devp-eu/tmcms-admin.git"
     }
   ],
