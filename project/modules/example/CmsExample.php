@@ -14,12 +14,17 @@ use TMCms\Modules\Example\Entity\ExampleEntityRepository;
 
 class CmsExample
 {
+    public function no()
+    {
+
+    }
+
     public function _default()
     {
         echo BreadCrumbs::getInstance()
             ->addCrumb(__('All Items'))
         ;
-        
+
         $items = new ExampleEntityRepository();
 
         echo Columns::getInstance()
