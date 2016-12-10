@@ -3,7 +3,7 @@
 // These are production server settings, shared between all developers
 $config_prod = [
     'db' => [
-        'login' => 'phpci-tmcms-empty',
+        'login' => 'phpci-tmcms-empt',
         'password' => 'phpci-tmcms-empty',
         'name' => 'phpci_tmcms_empty'
     ],
