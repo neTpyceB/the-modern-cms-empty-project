@@ -11,10 +11,10 @@ do
     echo "$name"
 done < coverage_project
 
-php phpunit.phar --colors --debug --verbose --bootstrap phpunit_bootstrap.php --coverage-text=coverage_neTpyceB ../vendor/neTpyceB
+php phpunit.phar --colors --debug --verbose --bootstrap phpunit_bootstrap.php --coverage-text=coverage_tmcms ../vendor/devp-eu
 
 while read line
 do
     name=$line
     echo "$name"
-done < coverage_neTpyceB
+done < coverage_tmcms
