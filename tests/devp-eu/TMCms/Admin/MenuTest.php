@@ -5,6 +5,10 @@ namespace Tests\TMCms\Admin;
 use TMCms\Admin\Menu;
 
 class MenuTest extends \PHPUnit_Framework_TestCase {
+    protected $menu_item = [
+        'title' => 'Test item'
+    ];
+
     public function testDisableMenu() {
         $menu = Menu::getInstance();
         $menu->disableMenu();
@@ -44,7 +48,7 @@ class MenuTest extends \PHPUnit_Framework_TestCase {
     public function testAddMenuItem()
     {
         $menu = Menu::getInstance();
-        $res = $menu->addMenuItem('test');
+        $res = $menu->addMenuItem('test', $this->menu_item);
 
         $this->assertEquals($menu, $res);
     }
@@ -66,22 +70,22 @@ class MenuTest extends \PHPUnit_Framework_TestCase {
 
         $menu = Menu::getInstance();
 
-        $menu->addMenuItem('tools');
+        $menu->addMenuItem('tools', $this->menu_item);
         $menu->addSubMenuItem('_default');
         $menu->addSubMenuItem('login');
         $menu->addHelpText('Help text');
         $menu->setMayAddItemsFlag(false);
-        $menu->addMenuItem('users');
+        $menu->addMenuItem('users', $this->menu_item);
         $menu->addSubMenuItem('item');
         $menu->addSubMenuItem('_default');
         $menu->addSubMenuItem('exit');
         $menu->setMayAddItemsFlag(true);
-        $menu->addMenuItem('third');
+        $menu->addMenuItem('third', $this->menu_item);
         $menu->addLabelForMenuItem('Label text', '_default', 'guest');
         $menu->addSubMenuItem('_default');
         $menu->addSubMenuItem('exit');
 
-        $res = $menu->addMenuItem('guest');
+        $res = $menu->addMenuItem('guest', $this->menu_item);
 
 
         $this->assertEquals($menu, $res);

@@ -3,7 +3,7 @@
 namespace Tests\TMCms\Admin;
 
 use TMCms\Admin\Messages;
-use TMCms\Admin\Users\Entity\UsersMessage;
+use TMCms\Admin\Users\Entity\UsersMessageEntity;
 
 class MessagesTest extends \PHPUnit_Framework_TestCase {
     public function testSendMessage() {
@@ -15,7 +15,7 @@ class MessagesTest extends \PHPUnit_Framework_TestCase {
         // Remove test message
         $message->deleteObject();
 
-        $test_msg = new UsersMessage();
+        $test_msg = new UsersMessageEntity();
 
         $this->assertInstanceOf(get_class($test_msg), $message);
     }
@@ -36,7 +36,7 @@ class MessagesTest extends \PHPUnit_Framework_TestCase {
         // Check text was in received messages
         $texts = [];
         foreach ($messages as $message) {
-            /** @var UsersMessage $message */
+            /** @var UsersMessageEntity $message */
             $texts[] = $message->getMessage();
         }
 
