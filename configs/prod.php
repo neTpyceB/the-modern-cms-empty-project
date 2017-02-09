@@ -29,4 +29,4 @@ if (file_exists(__DIR__ . '/local.php')) {
     $config_local = include_once __DIR__ . '/local.php';
 }
 
-return array_merge($config_prod, $config_local);
+return array_replace_recursive($config_prod, $config_local);
