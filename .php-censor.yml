@@ -1,0 +1,21 @@
+build_settings:
+  clone_depth: 1
+  mysql:
+    host: "localhost"
+    user: "phpci-tmcms-empt"
+    pass: "phpci-tmcms-empty"
+
+setup:
+  composer:
+    action: "install"
+
+test:
+  php_unit:
+    config:
+      - "vendor/devp-eu/tmcms-tests/src/phpunit.xml"
+    directory:
+      - "tests/"
+    args: "--bootstrap 'vendor/devp-eu/tmcms-tests/src/phpunit_bootstrap.php' --configuration 'vendor/devp-eu/tmcms-tests/src/phpunit.xml'"
+    coverage: "coverage"
+  shell:
+    - "./vendor/devp-eu/tmcms-tests/src/run_project_tests.sh"

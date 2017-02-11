@@ -32,6 +32,7 @@
     "devp-eu/tmcms": "dev-master",
     "devp-eu/tmcms-core": "dev-master",
     "devp-eu/tmcms-panel": "dev-master",
-    "devp-eu/tmcms-admin": "dev-master"
+    "devp-eu/tmcms-admin": "dev-master",
+    "devp-eu/tmcms-tests": "dev-master"
   }
 }
