@@ -40,7 +40,7 @@ You can change password or create new user in admin panel in module Users.
 
 Run first migration in module Tools -> Development (at the bottom of page) - "run migrations". This will install example data for example module, some example pages, etc.
 
-
-Run tests - ./tests/run_tests.sh
-
 [Go to Wiki](http://tmcms.eu/)
+
+[Go to CI test server](http://phpci.devp.eu/build-status/view/1)
+
