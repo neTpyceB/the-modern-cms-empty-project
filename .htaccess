@@ -1,3 +1,9 @@
+# http auth for PHP-CGI mode
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+</IfModule>
+
 # PHP settings
 <IfModule mod_php5.c>
 	php_flag display_errors 1
