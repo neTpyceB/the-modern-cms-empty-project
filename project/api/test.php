@@ -1,5 +1,5 @@
 <?php
-// This content is visible when requesting /-/ajax/test/
+// This content is visible when requesting /-/api/test/
 
 
 // Example response

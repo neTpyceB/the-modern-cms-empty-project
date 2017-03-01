@@ -20,7 +20,7 @@ location / {
     }
 
     if ($request_uri ~ "/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$"){
-        rewrite ^/(.*)/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$ /en/ajax/image_processor/?$0 break;
+        rewrite ^/(.*)/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$ /-/api/image_processor/?$0 break;
     }
 
     if ($query_string ~* "(\<|%3C).*script.*(\>|%3E)"){
