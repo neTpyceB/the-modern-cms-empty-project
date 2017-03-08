@@ -244,7 +244,7 @@ RewriteRule	\/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$	/cache/images/$0 [NC,L]
 
 # image processor, new file
 RewriteCond %{REQUEST_URI}	/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$
-RewriteRule	^(.*)/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$	/-/api/image_processor/?$0 [L]
+RewriteRule	^(.*)/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$	/-/api/image_processor/?$0 [R=302,L]
 
 # deny server variables in url
 RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
