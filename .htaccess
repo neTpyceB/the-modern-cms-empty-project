@@ -6,7 +6,8 @@ SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0
 	php_flag display_errors 1
 	php_flag register_globals 0
 	php_flag magic_quotes_gpc 0
-	php_flag allow_url_fopen 1
+	php_flag allow_url_fopen 0
+	php_flag allow_url_include 0
 	php_flag zlib.output_compression 0
 	php_value memory_limit 128M
 	php_value post_max_size 64M
