@@ -36,9 +36,6 @@ if ($login && $password) {
     }
 }
 
-// Init Settings
-Settings::getInstance()->init();
-
 // Hide all errors in prod env
 if (Settings::isProductionState()) {
     error_reporting(0);
