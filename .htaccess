@@ -241,8 +241,8 @@ RewriteRule . - [L]
 
 # image processor, cached file
 RewriteCond %{REQUEST_URI}	/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$
-RewriteCond %{DOCUMENT_ROOT}/cache/images/%0 -f
-RewriteRule	\/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$	/cache/images/$0 [NC,L]
+RewriteCond %{DOCUMENT_ROOT}/cache_img/%0 -f
+RewriteRule	\/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$	/cache_img/$0 [NC,L]
 
 # image processor, new file
 RewriteCond %{REQUEST_URI}	/?(.+)\.(jpg|png|jpeg|gif)([a-z0-9&=_]+)$
