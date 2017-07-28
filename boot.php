@@ -20,7 +20,6 @@ if (file_exists($autoload_file)) {
 
 // Error and exception handler
 set_error_handler([Errors::class, 'Handler']);
-set_exception_handler([Errors::class, 'Handler']);
 
 $config = Configuration::getInstance();
 
