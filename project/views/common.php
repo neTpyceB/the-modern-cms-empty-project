@@ -42,4 +42,9 @@ class CommonView extends View
         </div>
         <?php
     }
+
+    public function footer()
+    {
+        // This will be called at first, and then include file footer.php in views folder and
+    }
 }

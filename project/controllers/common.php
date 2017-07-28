@@ -25,4 +25,9 @@ class CommonController extends Controller
             'main_title' => 'Main title is here'
         ];
     }
+
+    public function footer()
+    {
+
+    }
 }
