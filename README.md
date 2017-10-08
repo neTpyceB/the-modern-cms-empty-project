@@ -42,5 +42,4 @@ Run first migration in module Tools -> Development (at the bottom of page) - "ru
 
 [Go to Wiki](http://tmcms.eu/)
 
-[Go to CI test server](http://phpci.devp.eu/build-status/view/1)
-
+[![Build Status](https://travis-ci.org/devp-eu/the-modern-cms-empty-project.svg?branch=master)](https://travis-ci.org/devp-eu/the-modern-cms-empty-project)
