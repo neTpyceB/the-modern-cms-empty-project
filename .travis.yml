@@ -1,0 +1,4 @@
+language: php
+php:
+  - 7.0
+script ./vendor/devp-eu/tmcms-tests/src/run_project_tests.sh
