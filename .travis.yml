@@ -3,4 +3,4 @@ php:
   - 7.0
 before_script:
 #  - mysql -e "create database IF NOT EXISTS phpci_tmcms_empty;"
-script: ./vendor/devp-eu/tmcms-tests/src/run_project_tests.sh
+#script: ./vendor/devp-eu/tmcms-tests/src/run_project_tests.sh
