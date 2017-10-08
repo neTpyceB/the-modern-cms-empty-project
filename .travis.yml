@@ -1,6 +1,8 @@
 language: php
 php:
   - 7.0
-#before_script:
+before_script:
+  - composer -v update
 #  - mysql -e "create database IF NOT EXISTS phpci_tmcms_empty;"
-script: phpunit --debug --verbose --colors --bootstrap vendor/devp-eu/tmcms-tests/src/phpunit_bootstrap.php vendor/devp-eu/tmcms-tests/src/
+script:
+  - phpunit --debug --verbose --colors --bootstrap vendor/devp-eu/tmcms-tests/src/phpunit_bootstrap.php vendor/devp-eu/tmcms-tests/src/
