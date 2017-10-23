@@ -11,6 +11,7 @@ Make server route all requests to index.php
 
 For example, apache config file
 
+```
 <VirtualHost *:80>
         ServerName site.localhost
         DocumentRoot /var/www/site
@@ -23,6 +24,7 @@ For example, apache config file
             allow from all
         </Directory>
 </VirtualHost>
+```
 
 Download or git-clone this repo.
 
