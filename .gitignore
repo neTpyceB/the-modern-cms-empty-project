@@ -1,5 +1,6 @@
 .git/
 /cache/
+/cache_img/
 /configs/*
 !/configs/prod.php
 /project/logs/
