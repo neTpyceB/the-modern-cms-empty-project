@@ -18,15 +18,8 @@
       "TMCms\\Modules\\": "project/modules"
     }
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "git@github.com:devp-eu/tmcms.git"
-    }
-  ],
   "require": {
     "php": ">=7.0",
-    "devp-eu/tmcms": "dev-master",
     "devp-eu/tmcms-core": "dev-master",
     "devp-eu/tmcms-panel": "dev-master",
     "devp-eu/tmcms-tests": "dev-master"
