@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 use TMCms\Admin\FrontPanel;
 use TMCms\Admin\Users;
@@ -6,7 +7,7 @@ use TMCms\App\Frontend;
 use TMCms\Config\Settings;
 use TMCms\Log\Stats;
 
-$start_microtime = microtime(1);
+$start_microtime = microtime(true);
 error_reporting(-1);
 
 // No direct access to PHP files
