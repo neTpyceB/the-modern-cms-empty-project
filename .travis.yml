@@ -1,6 +1,6 @@
 language: php
 php:
-  - 7.0
+  - 7.2
 before_script:
   - composer -v update
 #  - mysql -e "create database IF NOT EXISTS phpci_tmcms_empty;"
