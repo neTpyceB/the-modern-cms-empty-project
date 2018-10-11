@@ -17,6 +17,11 @@ define('MODE', 'site');
 // Path constants
 require_once 'boot.php';
 
+// Removes X-Frame-Options form same host and Yandex webvisor.com
+if(preg_match('~^https?:\/\/([^\/]+\\.)?('.preg_quote(HOST).'|webvisor\.com)\/~', $_SERVER['HTTP_REFERER'])){
+    header_remove('X-Frame-Options');
+}
+
 // Run main Application
 echo Frontend::getInstance();
 
