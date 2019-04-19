@@ -14,7 +14,7 @@ define('MODE', 'cms');
 // Startup
 require_once __DIR__ . '/../boot.php';
 
-echo new Backend;
+echo new Backend($argv ?? []);
 
 // Show debug info including execution time, memory usage and DB queries
 if (Settings::get('debug_panel')) {
