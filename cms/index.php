@@ -12,7 +12,7 @@ define('INC', true);
 define('MODE', 'cms');
 
 // Startup
-require_once '../boot.php';
+require_once __DIR__ . '/../boot.php';
 
 echo new Backend;
 
