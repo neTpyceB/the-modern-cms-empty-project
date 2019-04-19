@@ -15,7 +15,7 @@ define('INC', true);
 define('MODE', 'site');
 
 // Path constants
-require_once 'boot.php';
+require_once __DIR__ . '/boot.php';
 
 // Removes X-Frame-Options form same host and Yandex webvisor.com
 if(preg_match('~^https?:\/\/([^\/]+\\.)?('.preg_quote(HOST).'|webvisor\.com)\/~', $_SERVER['HTTP_REFERER'])){
